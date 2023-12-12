@@ -20,3 +20,6 @@ The "Clear Recycle Bin" project provides a PowerShell script (`clearRecycleBin.p
 3. **Custom PowerShell Command** (Optional): Integrate a custom PowerShell command for executing the script. Add it to your PowerShell profile script.
 
 For detailed instructions, refer to the individual project README.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
