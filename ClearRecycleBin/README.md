@@ -35,19 +35,19 @@ Save this script in a directory of your choice. In this example, we'll use `C:\Q
 Create an AutoHotKey script to execute the PowerShell script with a specified keyboard shortcut. Save the following script in a file with a `.ahk` extension, e.g., `clearRecycleBin.ahk`:
 
 ```autohotkey
-; Define the keyboard shortcut Shift+R
-+R:: 
-    ; Execute the PowerShell script
+; Definiere die Tastenkombination Alt+Shift+R
+!+R:: 
+    ; Führe das PowerShell-Skript aus
     Run, PowerShell.exe -ExecutionPolicy Bypass -File "C:\QualityOfLife-Scripts\ClearRecycleBin\clearRecycleBin.ps1"
-    ; Wait for the PowerShell script to finish
+    ; Warte auf das Ende des PowerShell-Skripts
     WinWaitActive, ahk_exe powershell.exe
-    ; Store the title of the PowerShell window
+    ; Merke dir den Titel des PowerShell-Fensters
     WinGet, PowerShellWindow, ID, A
 return
 
-; Keyboard shortcut to close the current PowerShell window
+; Tastenkombination zum Schliessen des aktuellen PowerShell-Fensters
 ^+R:: 
-    ; Find the PowerShell window using its stored ID
+    ; Finde das PowerShell-Fenster nach seinem gespeicherten ID
     WinClose, %PowerShellWindow%
 return
 ```

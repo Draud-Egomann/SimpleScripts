@@ -1,5 +1,5 @@
-; Definiere die Tastenkombination Shift+R
-+R:: 
+; Definiere die Tastenkombination Alt+Shift+R
+!+R:: 
     ; Führe das PowerShell-Skript aus
     Run, PowerShell.exe -ExecutionPolicy Bypass -File "C:\QualityOfLife-Scripts\ClearRecycleBin\clearRecycleBin.ps1"
     ; Warte auf das Ende des PowerShell-Skripts
