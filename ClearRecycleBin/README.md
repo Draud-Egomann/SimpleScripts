@@ -60,3 +60,6 @@ Double-click on the AutoHotKey script (`clearRecycleBin.ahk`) to run it. This sc
 Additionaly, you can put the AutoHotKey script in the startup folder.
 
 For more details on creating custom profiles, using AutoHotKey, and implementing custom PowerShell commands, refer to the `createCustomProfile.md` markdown file in this repository.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
