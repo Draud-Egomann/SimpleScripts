@@ -37,17 +37,17 @@ Create an AutoHotKey script to execute the PowerShell script with a specified ke
 ```autohotkey
 ; Definiere die Tastenkombination Alt+Shift+R
 !+R:: 
-    ; Führe das PowerShell-Skript aus
+    ; Run PowerShell script
     Run, PowerShell.exe -ExecutionPolicy Bypass -File "C:\QualityOfLife-Scripts\ClearRecycleBin\clearRecycleBin.ps1"
-    ; Warte auf das Ende des PowerShell-Skripts
+    ; Wait for the PowerShell window to become active
     WinWaitActive, ahk_exe powershell.exe
-    ; Merke dir den Titel des PowerShell-Fensters
+    ; Save the PowerShell window ID
     WinGet, PowerShellWindow, ID, A
 return
 
-; Tastenkombination zum Schliessen des aktuellen PowerShell-Fensters
+; Hotkey to close the PowerShell window
 ^+R:: 
-    ; Finde das PowerShell-Fenster nach seinem gespeicherten ID
+    ; Find PowerShell-Window by ID and close it
     WinClose, %PowerShellWindow%
 return
 ```

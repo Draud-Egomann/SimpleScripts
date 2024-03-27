@@ -1,27 +1,29 @@
-Um einen benutzerdefinierten PowerShell-Befehl namens "clear-trash" zu erstellen, der die Datei "C:\ClearRecycleBin\clearRecycleBin.ps1" aufruft, kannst du die folgenden Schritte befolgen:
+# Create a Custom PowerShell Command
 
-1. **PowerShell-Profil überprüfen oder erstellen (falls nicht vorhanden):**
-   Stelle sicher, dass dein PowerShell-Profil existiert. Das Profil ist eine Skriptdatei, die beim Start von PowerShell geladen wird. Überprüfe, ob du bereits ein Profil hast:
+To create a custom PowerShell command called "Clear-Trash" that invokes the script `"C:\ClearRecycleBin\clearRecycleBin.ps1"`, you can follow the steps below:
+
+1. **Check or create the PowerShell profile (if not already present):**
+   Ensure your PowerShell profile exists. The profile is a script file loaded when PowerShell starts. Check if you already have a profile:
 
    ```powershell
    Test-Path $profile
    ```
 
-   Wenn dies `False` ergibt, erstelle ein neues Profil mit:
+   If this returns `False`, create a new profile with:
 
    ```powershell
    New-Item -Type File -Force $profile
    ```
 
-2. **Öffne das PowerShell-Profil mit einem Texteditor:**
+2. **Open the PowerShell profile with a text editor:**
 
    ```powershell
    notepad $profile
    ```
 
-   Falls das Profil neu erstellt wurde, kann dieser Befehl auch eine neue leere Datei öffnen.
+   If the profile was newly created, this command can also open a new empty file.
 
-3. **Füge den folgenden Code hinzu:**
+3. **Add the following code:**
 
    ```powershell
    function Clear-Trash {
@@ -30,19 +32,19 @@ Um einen benutzerdefinierten PowerShell-Befehl namens "clear-trash" zu erstellen
        if (Test-Path $scriptPath) {
            & $scriptPath
        } else {
-           Write-Host "Die Datei $scriptPath wurde nicht gefunden."
+           Write-Host "The file $scriptPath was not found."
        }
    }
    ```
 
-   Speichere und schliesse den Texteditor.
+   Save and close the text editor.
 
-4. **Lade das aktualisierte Profil:**
+4. **Reload the updated profile:**
 
    ```powershell
    . $profile
    ```
 
-   Dadurch wird das aktualisierte Profil sofort geladen.
+   This will immediately load the updated profile.
 
-Nun kannst du den Befehl `Clear-Trash` in deiner PowerShell-Umgebung verwenden, um das Skript "clearRecycleBin.ps1" aufzurufen. Bitte beachte, dass du möglicherweise die Ausführungsrichtlinie für PowerShell-Skripte ändern musst, um das Skript erfolgreich auszuführen. Du kannst dies mit dem Befehl `Set-ExecutionPolicy` tun, wenn du entsprechende Berechtigungen hast.
+Now you can use the command `Clear-Trash` in your PowerShell environment to invoke the script "clearRecycleBin.ps1". Please note that you may need to change the PowerShell script execution policy to successfully run the script. You can do this using the `Set-ExecutionPolicy` command if you have the appropriate permissions
