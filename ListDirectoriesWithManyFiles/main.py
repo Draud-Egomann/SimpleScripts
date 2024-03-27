@@ -1,4 +1,5 @@
 import os
+import shutil
 
 def scan_folders(root_dir, folder_names, found_paths):
     for root, dirs, files in os.walk(root_dir):
@@ -8,18 +9,28 @@ def scan_folders(root_dir, folder_names, found_paths):
                 found_paths.append({folder_name: [folder_path]})
                 dirs.remove(folder_name)  # Exclude found folder from further search
 
+def remove_folders(found_paths):
+    for item in found_paths:
+        for folder_name, paths in item.items():
+            for path in paths:
+                response = input(f"Do you want to remove the folder '{folder_name}' at path '{path}'? (y/n): ")
+                if response.lower() == "y":
+                    try:
+                        shutil.rmtree(path) # remove folder with all its contents
+                    except Exception as e:
+                        print(f"Error when removing folder: {e}")
+
 # Mock array of folder names (replace with actual folder names as needed)
 mock_array = ["node_modules", "vendor", ".nuxt"]
 found_paths = []
 
 # Replace 'root_directory_path' with the path of the root directory you want to scan
-root_directory_path = "C:/Users/Justin/Documents/"
+root_directory_path = "C:/Users/Justin/Documents/pytest"
 
 if __name__ == "__main__":
     scan_folders(root_directory_path, mock_array, found_paths)
     
     # Printing all found paths
-    print("\nFound paths:")
     printed_folders = set()  # Set to keep track of printed folder names
     for item in found_paths:
         for folder_name, paths in item.items():
@@ -31,3 +42,12 @@ if __name__ == "__main__":
             else:
                 for path in paths:
                     print(f"   {path}")
+
+    print("\n")
+    response = input("Do you want to remove any of the found folders? (y/n): ")
+    if response.lower() == "y":
+        remove_folders(found_paths)
+
+    # temporary disable for testing
+    # print("Program execution completed.")
+    # input("Press any key to exit...")
