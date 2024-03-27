@@ -4,7 +4,8 @@ Welcome to the QualityOfLife-Scripts repository! This collection of scripts is d
 
 ## Table of Contents
 
-1. [Clear Recycle Bin](#clear-recycle-bin)
+1. [Clear Recycle Bin](#1-clear-recycle-bin)
+
 ## 1. Clear Recycle Bin
 
 ### Overview
@@ -22,4 +23,5 @@ The "Clear Recycle Bin" project provides a PowerShell script (`clearRecycleBin.p
 For detailed instructions, refer to the individual project README.
 
 ## License
+
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
