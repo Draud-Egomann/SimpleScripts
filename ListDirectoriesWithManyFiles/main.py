@@ -21,8 +21,19 @@ def scan_folders(root_dir, folder_names, found_paths):
                 dirs.remove(folder_name)  # Exclude found folder from further search
 
 def remove_folders(found_paths, selection):
-    for item in found_paths:
-        for folder_name, paths in item.items():
+    if selection == 0:  # Select all folders
+        for item in found_paths:
+            for folder_name, paths in item.items():
+                for path in paths:
+                    response = input(f"Do you want to remove the folder '{folder_name}' at path '{path}'? (y/n): ")
+                    if response.lower() == "y":
+                        try:
+                            shutil.rmtree(path) # remove folder with all its contents
+                        except Exception as e:
+                            print(f"Error when removing folder: {e}")
+    else:  # Select specific folders based on user input
+        selected_folders = found_paths[selection - 1]  # Adjust for 0-based index
+        for folder_name, paths in selected_folders.items():
             for path in paths:
                 response = input(f"Do you want to remove the folder '{folder_name}' at path '{path}'? (y/n): ")
                 if response.lower() == "y":
@@ -38,11 +49,9 @@ def list_folders(found_paths):
             if folder_name not in printed_folders:
                 print(f"{folder_name}:")
                 printed_folders.add(folder_name)  # Add folder name to printed set
-                for path in paths:
-                    print(f"   {path}")
-            else:
-                for path in paths:
-                    print(f"   {path}")
+
+            for path in paths:
+                print(f"   {path}")
 
 # Mock array of folder names (replace with actual folder names as needed)
 mock_array = ["node_modules", "vendor", ".nuxt"]
@@ -60,4 +69,28 @@ if __name__ == "__main__":
     print("\n")
     response = input("Do you want to remove any of the found folders? (y/n): ")
     if response.lower() == "y":
-        remove_folders(found_paths)
+        print("0: Select all")
+
+        for i, item in enumerate(found_paths):
+            for folder_name, paths in item.items():
+                print(f"{i+1}: {folder_name}")
+
+        while True:
+            try:
+                selection = input("Your selection: ")
+                selection = int(selection) # convert input to integer
+
+                # Check if selection is within range
+                if 0 <= selection <= len(found_paths):
+                    break
+                else:
+                    print("Invalid selection. Please try again.")
+            except ValueError:
+                print("Invalid input. Please enter a number.")
+                continue
+
+        remove_folders(found_paths, selection)
+
+    # temporary disable for testing
+    # print("Program execution completed.")
+    # input("Press any key to exit...")
