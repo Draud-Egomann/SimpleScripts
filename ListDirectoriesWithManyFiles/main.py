@@ -1,5 +1,6 @@
 import os
 import shutil
+import sys
 
 def scan_folders(root_dir, folder_names, found_paths):
     for root, dirs, files in os.walk(root_dir):
@@ -21,19 +22,8 @@ def scan_folders(root_dir, folder_names, found_paths):
                 dirs.remove(folder_name)  # Exclude found folder from further search
 
 def remove_folders(found_paths, selection):
-    if selection == 0:  # Select all folders
-        for item in found_paths:
-            for folder_name, paths in item.items():
-                for path in paths:
-                    response = input(f"Do you want to remove the folder '{folder_name}' at path '{path}'? (y/n): ")
-                    if response.lower() == "y":
-                        try:
-                            shutil.rmtree(path) # remove folder with all its contents
-                        except Exception as e:
-                            print(f"Error when removing folder: {e}")
-    else:  # Select specific folders based on user input
-        selected_folders = found_paths[selection - 1]  # Adjust for 0-based index
-        for folder_name, paths in selected_folders.items():
+    for item in found_paths[selection - 1:selection] if selection != 0 else found_paths:
+        for folder_name, paths in item.items():
             for path in paths:
                 response = input(f"Do you want to remove the folder '{folder_name}' at path '{path}'? (y/n): ")
                 if response.lower() == "y":
@@ -53,15 +43,16 @@ def list_folders(found_paths):
             for path in paths:
                 print(f"   {path}")
 
-# Mock array of folder names (replace with actual folder names as needed)
-mock_array = ["node_modules", "vendor", ".nuxt"]
-found_paths = []
-
-# Replace 'root_directory_path' with the path of the root directory you want to scan
-root_directory_path = "C:/Users/Justin/Documents/pytest"
-
 if __name__ == "__main__":
-    scan_folders(root_directory_path, mock_array, found_paths)
+    if len(sys.argv) < 3:
+        print("Usage: python script.py root_directory_path folder_name_1 folder_name_2 ...")
+        sys.exit(1)
+
+    root_directory_path = sys.argv[1]
+    folder_names_array = sys.argv[2:]
+
+    found_paths = []
+    scan_folders(root_directory_path, folder_names_array, found_paths)
     
     # Printing all found paths
     list_folders(found_paths)
@@ -91,6 +82,5 @@ if __name__ == "__main__":
 
         remove_folders(found_paths, selection)
 
-    # temporary disable for testing
-    # print("Program execution completed.")
-    # input("Press any key to exit...")
+    print("Program execution completed.")
+    input("Press any key to exit...")
