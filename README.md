@@ -5,6 +5,7 @@ Welcome to the QualityOfLife-Scripts repository! This collection of scripts is d
 ## Table of Contents
 
 1. [Clear Recycle Bin](#1-clear-recycle-bin)
+2. [Folder Scanner](#2-folder-scanner)
 
 ## 1. Clear Recycle Bin
 
@@ -21,6 +22,10 @@ The "Clear Recycle Bin" project provides a PowerShell script (`clearRecycleBin.p
 3. **Custom PowerShell Command** (Optional): Integrate a custom PowerShell command for executing the script. Add it to your PowerShell profile script.
 
 For detailed instructions, refer to the individual project README.
+
+## 2. Folder Scanner
+
+This Python script allows you to scan a certain directory for specific folder names and optionally remove them.
 
 ## License
 
