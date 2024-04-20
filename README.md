@@ -6,6 +6,7 @@ Welcome to the QualityOfLife-Scripts repository! This collection of scripts is d
 
 1. [Clear Recycle Bin](#1-clear-recycle-bin)
 2. [Folder Scanner](#2-folder-scanner)
+3. [Pull in all Subfolders](#3-pull-in-all-subfolders)
 
 ## 1. Clear Recycle Bin
 
@@ -26,6 +27,10 @@ For detailed instructions, refer to the individual project README.
 ## 2. Folder Scanner
 
 This Python script allows you to scan a certain directory for specific folder names and optionally remove them.
+
+## 3. Pull in all Subfolders
+
+This script automates the process of performing a `git pull` in all subdirectories of a specified target path.
 
 ## License
 
