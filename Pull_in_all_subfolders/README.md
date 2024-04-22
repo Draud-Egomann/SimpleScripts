@@ -5,23 +5,24 @@ This script automates the process of performing a `git pull` in all subdirectori
 ## How to Use
 
 1. **Download the Script**: Download the script and save it to your local machine.
-2. **Modify the Script (Optional)**: Open the script in a text editor and update the `target_path` variable with the path to the directory containing the subfolders you want to pull from.
-3. **Run the Script**: Execute the script by running the following command in bash:
+2. **Run the Script**: Execute the script by running it with path to the directory containing the subfolders you want to pull from.
 
-   ```bash
-    sh pull_from_all_git_repos.sh
-   ```
+- On Bash:
 
-- On Windows:
+  ```bash
+   sh pull_in_all_subfolders.sh "/path/to/target_directory"
+  ```
 
-   ```powershell
-    bash .\pull_in_all_subfolders.sh
-   ```
+- On PowerShell:
+
+  ```powershell
+   bash .\pull_in_all_subfolders.sh "/path/to/target_directory"
+  ```
 
 ## Note
 
 - This script assumes that Git is installed on your system and that you have appropriate permissions to perform `git pull` in the specified directories.
-- Ensure that the target path provided in the script points to the correct directory containing the subfolders you want to update.
+- Ensure that the target path provided as an argument points to the correct directory containing the subfolders you want to update.
 
 ## Example
 

@@ -1,11 +1,17 @@
 #!/bin/bash
 
-# Define the target path
-target_path="C:\Users\Justin\DocumentsMy\_vue-nuxt\_web2.0"
+# Check if a target path argument is provided
+if [ $# -eq 0 ]; then
+  echo "Usage: $0 <target_path>"
+  exit 1
+fi
+
+# Get the target path from the first argument
+target_path="$1"
 
 # Check if the target path exists
 if [ ! -d "$target_path" ]; then
-  echo "Target path does not exist!"
+  echo "Target path '$target_path' does not exist!"
   exit 1
 fi
 
