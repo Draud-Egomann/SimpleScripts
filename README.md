@@ -1,12 +1,13 @@
 # QualityOfLife-Scripts
 
-Welcome to the QualityOfLife-Scripts repository! This collection of scripts is designed to enhance your computing experience through automation and customization. Each project focuses on simplifying common tasks to make your daily routine more efficient.
+This collection of scripts is designed to enhance your computing experience through automation and customization. Each project focuses on simplifying common tasks.
 
 ## Table of Contents
 
 1. [Clear Recycle Bin](#1-clear-recycle-bin)
 2. [Folder Scanner](#2-folder-scanner)
-3. [Pull in all Subfolders](#3-pull-in-all-subfolders)
+3. [PDF Merger](#3-pdf-merger)
+4. [Pull in all Subfolders](#4-pull-in-all-subfolders)
 
 ## 1. Clear Recycle Bin
 
@@ -28,7 +29,11 @@ For detailed instructions, refer to the individual project README.
 
 This Python script allows you to scan a certain directory for specific folder names and optionally remove them.
 
-## 3. Pull in all Subfolders
+## 3. PDF Merger
+
+With this Python script, one can locally merge multiple PDF files from one folder in to one.
+
+## 4. Pull in all Subfolders
 
 This script automates the process of performing a `git pull` in all subdirectories of a specified target path.
 
