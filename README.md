@@ -1,4 +1,4 @@
-# QualityOfLife-Scripts
+# Simple-Scripts
 
 This collection of scripts is designed to enhance your computing experience through automation and customization. Each project focuses on simplifying common tasks.
 
@@ -11,31 +11,23 @@ This collection of scripts is designed to enhance your computing experience thro
 
 ## 1. Clear Recycle Bin
 
-### Overview
-
-The "Clear Recycle Bin" project provides a PowerShell script (`clearRecycleBin.ps1`) to empty the Recycle Bin with the convenience of an AutoHotKey-triggered keyboard shortcut.
-
-#### Instructions
-
-1. **PowerShell Script**: Create a PowerShell script to clear the Recycle Bin. Save it in a chosen directory.
-
-2. **AutoHotKey Script**: Create an AutoHotKey script to execute the PowerShell script using a specified keyboard shortcut.
-
-3. **Custom PowerShell Command** (Optional): Integrate a custom PowerShell command for executing the script. Add it to your PowerShell profile script.
-
-For detailed instructions, refer to the individual project README.
+The "Clear Recycle Bin" project provides a PowerShell script to empty the Recycle Bin with the convenience of an AutoHotKey-triggered keyboard shortcut.  
+[Detailed README for this script.](./ClearRecycleBin/README.md)
 
 ## 2. Folder Scanner
 
-This Python script allows you to scan a certain directory for specific folder names and optionally remove them.
+This Python script allows you to scan a certain directory for specific folder names and optionally remove them.  
+[Detailed README for this script.](./ListDirectoriesWithManyFiles/README.md)
 
 ## 3. PDF Merger
 
-With this Python script, one can locally merge multiple PDF files from one folder in to one.
+With this Python script, one can locally merge multiple PDF files from one folder in to one.  
+[Detailed README for this script.](./PDF_merger/README.md)
 
 ## 4. Pull in all Subfolders
 
-This script automates the process of performing a `git pull` in all subdirectories of a specified target path.
+This script automates the process of performing a `git pull` in all subdirectories of a specified target path.  
+[Detailed README for this script.](./Pull_in_all_subfolders/README.md)
 
 ## License
 
