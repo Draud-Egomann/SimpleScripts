@@ -8,6 +8,7 @@ This collection of scripts is designed to enhance your computing experience thro
 2. [Folder Scanner](#2-folder-scanner)
 3. [PDF Merger](#3-pdf-merger)
 4. [Pull in all Subfolders](#4-pull-in-all-subfolders)
+5. [Commit Timestamp Filter](#5-commit-timestamp-Filter)
 
 ## 1. Clear Recycle Bin
 
@@ -28,6 +29,11 @@ With this Python script, one can locally merge multiple PDF files from one folde
 
 This script automates the process of performing a `git pull` in all subdirectories of a specified target path.  
 [Detailed README for this script.](./Pull_in_all_subfolders/README.md)
+
+## 5. Commit Timestamp Filter
+
+This script filters the commit timestamps and displays the commits that were made within a specified time frame.
+[Detailed README for this script.](./CommitTimestampFilter/README.md)
 
 ## License
 
