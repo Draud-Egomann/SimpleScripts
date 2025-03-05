@@ -33,12 +33,19 @@ def main():
     start_time = datetime.strptime(START_TIME, '%H:%M').time()
     end_time = datetime.strptime(END_TIME, '%H:%M').time()
 
+    counter = 0
+    counter_total = commits.__len__()
     for commit in commits:
         commit_time = datetime.fromtimestamp(commit.committed_date)
         if not INCLUDE_WEEKENDS and is_weekend(commit_time):
             continue
         if is_within_time_range(commit_time, start_time, end_time):
             print(f"Commit: {commit.hexsha}, Date: {commit_time}, Message: {commit.message.strip()}")
+            counter += 1
+    print(f"Total commits made in range: {counter}")
+    print(f"Total commits made: {counter_total}")
+    print(f"Percentage of commits made in range: {counter/counter_total*100:.2f}%")
+    print(f"Percentage of commits made outside range: {(counter_total-counter)/counter_total*100:.2f}%")
 
 if __name__ == '__main__':
     if len(sys.argv) > 1:
