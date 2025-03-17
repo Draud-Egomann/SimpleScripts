@@ -41,6 +41,11 @@ This script filters the commit timestamps and displays the commits that were mad
 Filters a JSON file containing package information by license.  
 [Detailed README for this script.](./License_Filter/README.md)
 
+## 7. Remove Temporary Files
+
+This folder contains scripts to remove temporary files from your system, helping to free up disk space.  
+[Detailed README for this script.](./RmTempFiles/README.md)
+
 ## License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
